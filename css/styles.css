@@ -10,7 +10,7 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-bg-color: #e5e5e5;
-  --cubic-bezier(0.4, 0, 0.2, 1);
+ 
 }
 body {
   color: var(--primary-text-color);
@@ -103,11 +103,12 @@ button {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--title-text-color);
-  transition: opacity  250ms var(--cubic-bezier);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link.curret {
   color: var(--accent-color);
@@ -147,10 +148,13 @@ button {
 .button-primary:hover,
 .button-primary:focus {
   color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .auth-nav .button-primary:hover .primary-icon,
 .auth-nav .button-primary:focus .primary-icon {
   fill: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* effect*/
 .hero {
@@ -305,8 +309,10 @@ margin-right: 8px;
 }
 .items {
   width: 370px;
+  height: 294px;
   margin-right: 30px;
   position: relative;
+  
   }
 .items:nth-child(3n) {
   margin-right: 0;
@@ -327,10 +333,12 @@ margin-right: 8px;
 .work-product{
   background: rgba(47, 48, 58, 0.8);
   position: absolute;
-  width: 370px;
+  width: 100%;
   height: 70px;
+  margin: 0;
   bottom: 0;
-  left: 0;
+  right: 0;
+ 
 }
 .work-list .item {
   margin-right: 30px;
@@ -380,11 +388,13 @@ margin-right: 8px;
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
  
 }
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
   fill: #ffffff;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-lists {
@@ -467,16 +477,17 @@ margin-right: 8px;
 .project-cursor .cursor:focus {
   color: #ffffff;
   background-color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-cursor:hover,
 .item-cursor:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-link{
   text-decoration: none;
-  
 }
 .project-work .project {
   margin-top: 0;
@@ -499,11 +510,15 @@ margin-right: 8px;
   margin-right: 30px;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .flex-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
+  }
 .flex-item:nth-child(3n) {
   margin-right: 0;
 }
@@ -520,7 +535,12 @@ margin-right: 8px;
   padding: 20px 24px;
 }
 .project-product{
-background-color: #2196F3E5;
+position: relative;
+overflow: hidden;
+}
+.project-link:hover .project-product{
+  opacity: 1;
+
 }
 .filter-title{
   font-weight: 400;
@@ -532,6 +552,28 @@ background-color: #2196F3E5;
     margin: 0;
    
 }
+.project-product{
+  position: absolute;
+  background-color: #2196F3E5;
+display: block;
+width: 370px;
+height: 294px;
+opacity: 0;
+
+transform: translateY(100%);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-link:hover .project-product{
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*.project-product.is-hidden{
+    opacity: 0;
+      pointer-events: none;
+      overflow: visible;
+    }*/
+
 /*client*/
 .client {
   padding-top: 94px;
@@ -578,10 +620,12 @@ background-color: #2196F3E5;
 .client-link:hover .client-icon,
 .client-link:focus .client-icon {
   fill: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
 .client-link:focus {
   border: 1px solid var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /**footer*/
 .footer-fons {
@@ -615,10 +659,12 @@ background-color: #2196F3E5;
 .adress-map:hover,
 .adress-map:focus {
   color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress:hover,
 .adress:focus {
   color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-item {
   margin-bottom: 9px;
@@ -670,4 +716,5 @@ background-color: #2196F3E5;
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
